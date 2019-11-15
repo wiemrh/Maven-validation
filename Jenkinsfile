@@ -22,6 +22,14 @@
         NEXUS_CREDENTIAL_ID = "nexusId"
     }
     stages {
+      stage('Email Notification') {
+          steps {
+                  mail bcc: '', body: '''Hi wiem ,
+Welcome to jenkins email alerts .
+Thanks :*''', cc: '', from: '', replyTo: '', subject: 'Jenkins notification', to: 'wiwirh95@gmail.com'
+          }
+      
+        }
       
         stage('Checkout') {
             steps {
@@ -81,14 +89,7 @@
             }
         }
     
-        stage('Email Notification') {
-          steps {
-                  mail bcc: '', body: '''Hi wiem ,
-Welcome to jenkins email alerts .
-Thanks :*''', cc: '', from: '', replyTo: '', subject: 'Jenkins notification', to: 'wiwirh95@gmail.com'
-          }
-      
-        }
+        
       
     }
     
