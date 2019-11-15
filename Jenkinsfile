@@ -24,12 +24,7 @@
     stages {
 stage('Email Notification') {
           steps {
-               env.ForEmailPlugin = env.WORKSPACE      
-            emailext attachmentsPattern: 'TestResults\\*.trx',      
-            body: '''${SCRIPT, template="groovy_html.template"}''', 
-            subject: currentBuild.currentResult + " : " + env.JOB_NAME, 
-            to: 'wiwirh95@gmail.com'
-
+                  mail bcc: '', body: '''${SCRIPT, template="groovy_html.template"}'', cc: '', from: '', replyTo: '', subject:currentBuild.currentResult + " : " + env.JOB_NAME, to: 'wiwirh95@gmail.com'
           }
         }
 
