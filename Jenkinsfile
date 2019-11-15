@@ -87,7 +87,7 @@
           steps {
                   mail bcc: '',  body: '''Hi wiem ,
 Welcome to  '''+  env.JOB_NAME + ''' email alerts .
-Thanks 😗''', cc: '', from: '', replyTo: '',subject:currentBuild.currentResult + " : " + env.JOB_NAME, to:  'wiwirh95@gmail.com'
+Thanks for this amazing work''', cc: '', from: '', replyTo: '',subject:currentBuild.currentResult + " : " + env.JOB_NAME, to:  'wiwirh95@gmail.com'
        }
       
         }
