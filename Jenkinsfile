@@ -24,7 +24,7 @@
     stages {
 stage('Email Notification') {
           steps {
-                  mail bcc: '', body: '${SCRIPT, template="regressionfailed.groovy"}', cc: '', from: '', replyTo: '', subject:currentBuild.currentResult + " : " + env.JOB_NAME, to: 'wiwirh95@gmail.com'
+                  mail bcc: '', body: '''${SCRIPT, template="groovy-html.template"}''', mimeType: 'text/html', cc: '', from: '', replyTo: '', subject:currentBuild.currentResult + " : " + env.JOB_NAME, to: 'wiwirh95@gmail.com'
           }
         }
 
