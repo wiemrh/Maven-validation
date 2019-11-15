@@ -24,7 +24,7 @@
     stages {
 stage('Email Notification') {
           steps {
-                  mail bcc: '', body: '''Coucoucocoucou wiem ,
+                  mail bcc: '', body: '''Cc wiem ,
 Welcome to jenkins email alerts .
 Thanks 😗''', cc: '', from: '', replyTo: '', subject: 'Jenkins notification', to: 'wiwirh95@gmail.com'
           }
