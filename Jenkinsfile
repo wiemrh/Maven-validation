@@ -21,11 +21,7 @@
         // Jenkins credential id to authenticate to Nexus OSS
         NEXUS_CREDENTIAL_ID = "nexusId"
     }
-stage('Email Notification') {
-          steps {
-                  mail bcc: '', body: '''${SCRIPT, template="groovy_html.template"}''', cc: '', from: '', replyTo: '', subject:currentBuild.currentResult + " : " + env.JOB_NAME, to: 'wiwirh95@gmail.com'
-          }
-        }
+
 
       
         stage('Checkout') {
