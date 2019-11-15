@@ -24,9 +24,12 @@
     stages {
 stage('Email Notification') {
           steps {
-                  mail bcc: '', body: '''Hello wiem ,
-Welcome to jenkins email alerts .
-Thanks Girl ''', cc: '', from: '', replyTo: '', subject: 'Jenkins notification', to: 'wiwirh95@gmail.com'
+               env.ForEmailPlugin = env.WORKSPACE      
+            emailext attachmentsPattern: 'TestResults\\*.trx',      
+            body: '''${SCRIPT, template="groovy_html.template"}''', 
+            subject: currentBuild.currentResult + " : " + env.JOB_NAME, 
+            to: 'wiwirh95@gmail.com'
+
           }
         }
 
