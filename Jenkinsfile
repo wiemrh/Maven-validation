@@ -1,5 +1,5 @@
               
-      pipeline {
+     pipeline {
 
         
          agent {
@@ -21,7 +21,17 @@
         // Jenkins credential id to authenticate to Nexus OSS
         NEXUS_CREDENTIAL_ID = "nexusId"
     }
+    stages {
+stage('Email Notification') {
+          steps {
+               env.ForEmailPlugin = env.WORKSPACE      
+            emailext attachmentsPattern: 'TestResults\\*.trx',      
+            body: '''${SCRIPT, template="groovy_html.template"}''', 
+            subject: currentBuild.currentResult + " : " + env.JOB_NAME, 
+            to: 'wiwirh95@gmail.com'
 
+          }
+        }
 
       
         stage('Checkout') {
