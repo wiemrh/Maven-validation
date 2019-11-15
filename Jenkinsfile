@@ -24,7 +24,7 @@
     stages {
         stage('Checkout') {
             steps {
-             git 'https://github.com/wiemrh/maven-project.git'
+             git 'https://github.com/wiemrh/Maven-validation.git'
             }
         }
         stage('Build') {
