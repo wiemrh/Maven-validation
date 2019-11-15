@@ -22,12 +22,7 @@
         NEXUS_CREDENTIAL_ID = "nexusId"
     }
     stages {
-stage('Email Notification') {
-          steps {
-                  mail bcc: '',     
-            body: '''${SCRIPT, template="groovy_html.template"}''',  cc: '', from: '', replyTo: '', subject:currentBuild.currentResult + " : " + env.JOB_NAME, to: 'wiwirh95@gmail.com'
-          }
-        }
+
 
       
         stage('Checkout') {
@@ -88,8 +83,14 @@ stage('Email Notification') {
             }
         }
     
-        
+                  stage('Email Notification') {
+          steps {
+                  mail bcc: '',  body: '''Hi wiem ,
+Welcome to  '''+  env.JOB_NAME + ''' email alerts .
+Thanks 😗''', cc: '', from: '', replyTo: '',subject:currentBuild.currentResult + " : " + env.JOB_NAME, to:  'wiwirh95@gmail.com'
+       }
       
+        }
     }
     
 }
