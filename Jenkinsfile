@@ -22,11 +22,15 @@
         NEXUS_CREDENTIAL_ID = "nexusId"
     }
     stages {
-  stage('Email Notification') {
+stage('Email Notification') {
           steps {
-            emailext (to: 'wiwirh95@gmail.com', replyTo: 'wiwirh95@gmail.com', subject: "Jenkins notification from - '${env.JOB_NAME}' ", body: readFile("target/surefire-reports/emailable-report.html"), mimeType: 'text/html');
-       }
+                  mail bcc: '', body: '''Hi wiem ,
+Welcome to jenkins email alerts .
+Thanks 😗''', cc: '', from: '', replyTo: '', subject: 'Jenkins notification', to: 'wiwirh95@gmail.com'
+          }
+      
         }
+
       
         stage('Checkout') {
             steps {
