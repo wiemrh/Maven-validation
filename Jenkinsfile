@@ -85,7 +85,7 @@
     
                   stage('Email Notification') {
           steps {
-                  mail bcc: '',  body: '''Hi wiem ,
+                  mail bcc: '',  body: '''Hello wiem ,
 Welcome to  '''+  env.JOB_NAME + ''' email alerts .
 Thanks for this amazing work''', cc: '', from: '', replyTo: '',subject:currentBuild.currentResult + " : " + env.JOB_NAME, to:  'wiwirh95@gmail.com'
        }
